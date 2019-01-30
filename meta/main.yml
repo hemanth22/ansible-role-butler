@@ -1,6 +1,7 @@
 ---
 galaxy_info:
-  author: Hemanth BITRA
+  role_name: butler
+  author: hemanth22
   description: bulter for jenkins
   license: GPLv3
   min_ansible_version: 1.2
