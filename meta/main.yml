@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Hemanth BITRA
+  description: bulter for jenkins
+  license: GPLv3
+  min_ansible_version: 1.2
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+  galaxy_tags:
+    - jenkins
+    - plugin
+    - ci
+    - devops
+
+dependencies: []

@@ -1,0 +1,7 @@
+---
+# tasks file for ansible-role-butler
+- name: Ensure bulter installed.
+  get_url:
+    url: https://s3.us-east-1.amazonaws.com/butlercli/1.0.0/linux/butler
+    dest: /usr/local/bin/
+    mode: 0777
