@@ -3,6 +3,8 @@ Ansible Role: Butler
 
 Butler for jenkins to import/export plugins, jobs and credentials.
 
+[![Build Status](https://travis-ci.org/hemanth22/ansible-role-butler.svg?branch=master)](https://travis-ci.org/hemanth22/ansible-role-butler)
+
 Good Tutorial link: http://www.blog.labouardy.com/butler-cli-import-export-jenkins-plugins-jobs/
 
 Requirements
