@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    working_directory: /app
+    docker:
+      - image: quay.io/ansible/molecule:2.20
+    steps:
+      - checkout
+      - run:
+          name: Getout of the code.
+          command: cd ../
+
+      - run:
+          name: Duplicate the code.
+          command: cp -rf ansible-role-butler hemanth22.butler
+          
+      - run:
+          name: Checking to the code.
+          command: cd hemanth22.butler
+
+      - run:
+          name: Display version of the docker.
+          command: cat /etc/*release
+          
+      - run:
+          name: Performing molecule test for ansible role.
+          command: molecule test
