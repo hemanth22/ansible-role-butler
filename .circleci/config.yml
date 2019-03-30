@@ -21,6 +21,10 @@ jobs:
       - run:
           name: Getout of the code.
           command: cd ../
+          
+      - run:
+          name: Getout of the code.
+          command: ls -la
 
       - run:
           name: Duplicate the code.
