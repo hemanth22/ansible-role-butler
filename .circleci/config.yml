@@ -19,26 +19,9 @@ jobs:
               awscli==1.11.76
 
       - run:
-          name: Getout of the code.
-          command: cd ../
-          
-      - run:
-          name: Getout of the code.
-          command: ls -la
-
-      - run:
-          name: Duplicate the code.
-          command: cp -rf ansible-role-butler hemanth22.butler
-          
-      - run:
-          name: Checking to the code.
-          command: cd hemanth22.butler
-
-      - run:
-          name: Display version of the docker.
-          command: cat /etc/*release
-          
-      - run:
-          name: Performing molecule test for ansible role.
-          command: docker run --rm -it -v "$(pwd)":/tmp/$(basename "${PWD}"):ro -v /var/run/docker.sock:/var/run/docker.sock -w /tmp/$(basename "${PWD}") quay.io/ansible/molecule:2.20 molecule test
-
+          name: Test Ansible playbook code.
+          command: |
+            cd ../
+            cp -rf ansible-role-butler hemanth22.butler
+            cd hemanth22.butler
+            docker run --rm -it -v "$(pwd)":/tmp/$(basename "${PWD}"):ro -v /var/run/docker.sock:/var/run/docker.sock -w /tmp/$(basename "${PWD}") quay.io/ansible/molecule:2.20 molecule test
