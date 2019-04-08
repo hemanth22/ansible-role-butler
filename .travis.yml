@@ -28,4 +28,5 @@ after_failure:
 
 notifications:
   on_success: always
+  on_failure: never
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
