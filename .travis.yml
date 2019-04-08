@@ -27,7 +27,7 @@ after_failure:
   - ./createIssue.sh
 
 notifications:
-  webhooks: 
+  webhooks:
     urls:
       - https://galaxy.ansible.com/api/v1/notifications/
     on_success: always
