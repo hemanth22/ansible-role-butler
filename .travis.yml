@@ -26,8 +26,6 @@ after_failure:
   - chmod 777 createIssue.sh
   - ./createIssue.sh
 
-notifications:
-  on_success: always
-  on_failure: never
-  webhooks:
-    - https://galaxy.ansible.com/api/v1/notifications/
+after_success:
+  - chmod 777 apinotifier.sh
+  - ./apinotifier.sh
