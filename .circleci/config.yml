@@ -13,7 +13,7 @@ jobs:
           docker_layer_caching: true
       - run: 
           name: Print release details
-          command: ls;pwd;cat /etc/*release;sudo mkdir hemanth22.butler;sudo mv -rf defaults hemanth22.butler;sudo mv -rf meta hemanth22.butler;sudo mv -rf tasks hemanth22.butler; sudo mv -rf tests hemanth22.butler; sudo mv -rf molecule hemanth22.butler;ls -la
+          command: ls;pwd;cat /etc/*release; rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
       - run: 
           name: Pulling molecule docker
           command: docker pull quay.io/ansible/molecule:2.20
