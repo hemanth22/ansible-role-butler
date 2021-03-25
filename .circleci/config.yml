@@ -6,14 +6,14 @@ jobs:
     steps:
       - checkout
       - run: 
-          name: Pulling molecule docker
-          command: docker pull quay.io/ansible/molecule:2.20
-      - run: 
           name: Print release details
           command: cat /etc/*release
       - run: 
           name: Check docker status
           command: systemctl status -l docker
+      - run: 
+          name: Pulling molecule docker
+          command: docker pull quay.io/ansible/molecule:2.20
       - run: 
           name: Test Ansible playbook code.
           command: docker run --rm -it -v "$(pwd)":/tmp/$(basename "${PWD}"):ro -w /tmp/$(basename "${PWD}") quay.io/ansible/molecule:2.20 molecule test
