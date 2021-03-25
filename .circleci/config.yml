@@ -15,8 +15,11 @@ jobs:
           name: Print release details
           command: cat /etc/*release
       - run: 
+          name: Delete unnecessary data
+          command: rm -rf *;rm .ansible-lint;rm .travis.yml;rm .git
+      - run: 
           name: Arrange role
-          command: rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
+          command: git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
       - run: 
           name: Configure molecule
           command: pip install molecule ansible ansible-lint yamllint --user
