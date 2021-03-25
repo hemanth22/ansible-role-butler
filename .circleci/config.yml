@@ -6,6 +6,7 @@ jobs:
         auth:
           username: bitroid
           password: $DOCKERHUB_PASSWORD
+    working_directory: /app
     steps:
       - checkout
       - run: 
