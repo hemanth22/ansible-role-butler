@@ -16,7 +16,7 @@ jobs:
           command: ls;pwd;cat /etc/*release; rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
       - run: 
           name: Arrange role
-          command: rm -rf *;rm -rf .*;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
+          command: rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
       - run: 
           name: Pulling molecule docker
           command: docker pull quay.io/ansible/molecule:2.20
