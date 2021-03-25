@@ -25,4 +25,4 @@ jobs:
           command: pip install molecule ansible ansible-lint yamllint --user
       - run: 
           name: Test Ansible playbook code.
-          command: molecule test
+          command: cd hemanth22.butler && molecule test
