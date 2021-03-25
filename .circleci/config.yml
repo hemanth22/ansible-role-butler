@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/golang:1.15
+      - image: circleci/python:3.8.0
         auth:
           username: bitroid
           password: $DOCKERHUB_PASSWORD
@@ -13,13 +13,13 @@ jobs:
           docker_layer_caching: true
       - run: 
           name: Print release details
-          command: ls;pwd;cat /etc/*release; rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
+          command: cat /cat/*release
       - run: 
           name: Arrange role
           command: rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
       - run: 
-          name: Pulling molecule docker
-          command: docker pull quay.io/ansible/molecule:2.20
+          name: Configure molecule
+          command: pip install molecule
       - run: 
           name: Test Ansible playbook code.
-          command: cd ../..;docker run --rm -it -v "$(pwd)":/tmp/$(basename "${PWD}"):ro -w /tmp/$(basename "${PWD}") quay.io/ansible/molecule:2.20 molecule test
+          command: molecule test
