@@ -3,14 +3,14 @@ jobs:
   build:
     docker:
       - image: docker:17.05.0-ce-git
+        auth:
+          username: bitroid
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - run: 
           name: Print release details
           command: cat /etc/*release
-      - run: 
-          name: Check docker status
-          command: systemctl status -l docker
       - run: 
           name: Pulling molecule docker
           command: docker pull quay.io/ansible/molecule:2.20
