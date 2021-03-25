@@ -13,7 +13,7 @@ jobs:
           docker_layer_caching: true
       - run: 
           name: Print release details
-          command: cat /etc/*release
+          command: ls;pwd;cat /etc/*release
       - run: 
           name: Pulling molecule docker
           command: docker pull quay.io/ansible/molecule:2.20
