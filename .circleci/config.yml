@@ -13,7 +13,7 @@ jobs:
           docker_layer_caching: true
       - run: 
           name: Print release details
-          command: cat /cat/*release
+          command: cat /etc/*release
       - run: 
           name: Arrange role
           command: rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
