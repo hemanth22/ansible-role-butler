@@ -22,7 +22,7 @@ jobs:
           command: git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
       - run: 
           name: Configure molecule
-          command: pip install molecule ansible ansible-lint yamllint --user
+          command: pip install molecule ansible ansible-lint yamllint molecule-docker --user
       - run: 
           name: Test Ansible playbook code.
           command: cd hemanth22.butler && molecule test
