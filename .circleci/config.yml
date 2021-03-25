@@ -19,7 +19,7 @@ jobs:
           command: rm -rf *;git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
       - run: 
           name: Configure molecule
-          command: pip install molecule
+          command: pip install molecule --user
       - run: 
           name: Test Ansible playbook code.
           command: molecule test
