@@ -16,7 +16,7 @@ jobs:
           command: cat /etc/*release
       - run: 
           name: Delete unnecessary data
-          command: rm -rf *;rm .ansible-lint;rm .travis.yml;rm .git
+          command: rm -rf *;rm .ansible-lint;rm .travis.yml;rm -rf .git
       - run: 
           name: Arrange role
           command: git clone https://github.com/hemanth22/ansible-role-butler.git hemanth22.butler;ls -la
